@@ -8,18 +8,19 @@
 
 /* Очищать input после добавления нового элемента в список */
 
-//поле ввода списка покупок
 const submitFiled = document.querySelector('#input');
-//место, где будет храниться список покупок
 const container = document.querySelector('#items');
 
 function addShopingList() {
-    //здесь будет храниться список, кот. ввел пользователь в input
     const shoppingListUser = submitFiled.value;
 
     const listItem = document.createElement('div');
     listItem.classList.add('item');
     listItem.textContent = shoppingListUser;
+
+    listItem.addEventListener('click', function () {
+        listItem.classList.toggle('done');
+    });
 
     if (shoppingListUser != '') {
         container.append(listItem);
@@ -35,12 +36,3 @@ function sendByKey(event) {
 }
 
 submitFiled.addEventListener('keydown', sendByKey);
-
-//не могу разобраться почему не работает зачеркивание
-const listItems = document.querySelectorAll('.item');
-
-for (let items of listItems) {
-    items.addEventListener('click', function () {
-        items.classList.toggle('done');
-    });
-};
