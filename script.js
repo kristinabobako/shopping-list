@@ -36,4 +36,11 @@ function sendByKey(event) {
 
 submitFiled.addEventListener('keydown', sendByKey);
 
+//не могу разобраться почему не работает зачеркивание
+const listItems = document.querySelectorAll('.item');
 
+for (let items of listItems) {
+    items.addEventListener('click', function () {
+        items.classList.toggle('done');
+    });
+};
