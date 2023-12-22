@@ -8,11 +8,11 @@
 
 /* Очищать input после добавления нового элемента в список */
 
-const submitFiled = document.querySelector('#input');
+const submitField = document.querySelector('#input');
 const container = document.querySelector('#items');
 
 function addShopingList() {
-    const shoppingListUser = submitFiled.value;
+    const shoppingListUser = submitField.value;
 
     const listItem = document.createElement('div');
     listItem.classList.add('item');
@@ -26,7 +26,7 @@ function addShopingList() {
         container.append(listItem);
     }
 
-    submitFiled.value = '';
+    submitField.value = '';
 }
 
 function sendByKey(event) {
@@ -35,4 +35,4 @@ function sendByKey(event) {
     }
 }
 
-submitFiled.addEventListener('keydown', sendByKey);
+submitField.addEventListener('keydown', sendByKey);
